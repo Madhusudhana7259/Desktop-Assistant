@@ -30,11 +30,27 @@ def takecomm():
             tex = r.recognize_google(audio, language="en-in")
             # print(tex)
         
-        
+
         except Exception as e:
             print("Say again")
             return "None"
         return tex
 
-text = takecomm()
-speak(text)
+if __name__=="__main__":
+
+    while True:
+
+        te = takecomm().lower()
+        
+        if "wikipedia" in te:
+            speak("Searching wiki")
+            te = te.replace("wikipedia","")
+            summ = wikipedia.summary(te,sentences = 2)
+            print(summ)
+        elif "open" in te:
+            x=te.replace("open","").strip()
+            speak(f"Opening {x}")
+            webbrowser.open(f"{x}.com")
+        else:
+            exit()
+            
