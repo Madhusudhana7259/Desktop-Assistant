@@ -4,7 +4,7 @@ import os
 from gtts import gTTS
 
 
-GOOGLE_API_KEY = "AIzaSyAI_0fdj2VHMqajL8qsmTYSWd2QTdyYf48"
+GOOGLE_API_KEY = "abc"
 os.environ['GOOGLE_API_KEY'] = GOOGLE_API_KEY
 
 def voice_input():
